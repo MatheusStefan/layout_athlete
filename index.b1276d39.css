@@ -1,0 +1,119 @@
+.body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+.people {
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+  gap: 40px 30px;
+  margin-top: 30px;
+  display: grid;
+}
+
+@media (width >= 1000px) {
+  .people {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.person {
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 231px;
+  transition: transform 1s;
+  display: flex;
+}
+
+.person:hover {
+  z-index: 2;
+  background-color: #eee;
+  border-radius: 12px;
+  transform: scale(1.2);
+}
+
+.person:hover .person__photo-content {
+  border-radius: 60px;
+}
+
+.person:hover .details {
+  background-color: #eee;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.person:hover .details__name {
+  line-height: 27px;
+}
+
+.person:hover .details__extra-sport, .person:hover .details__extra-pay {
+  display: flex;
+}
+
+.person__photo {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  position: relative;
+}
+
+.person__photo-content {
+  object-fit: cover;
+  border-radius: 200px;
+  width: 200px;
+  height: 200px;
+  transition: all 1s;
+}
+
+.person__photo-rank {
+  color: #8b0000;
+  background-color: #fff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  font-family: Arial, Helvetica;
+  font-weight: 700;
+  display: flex;
+  position: absolute;
+  top: 80px;
+  right: 10px;
+}
+
+.person .details__name {
+  color: #2f4f4f;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  transition: all 1s;
+  display: flex;
+}
+
+.person .details__extra {
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  padding-top: 11px;
+  padding-bottom: 19px;
+  display: flex;
+}
+
+.person .details__extra-sport, .person .details__extra-pay {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: none;
+}
+/*# sourceMappingURL=index.b1276d39.css.map */
