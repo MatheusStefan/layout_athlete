@@ -1,1 +1,145 @@
+$background-color: #EEEEEE;
+$red: #8B0000;
+$green: #2F4F4F;
 
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+.people {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+  gap: 40px 30px;
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 231px;
+  transition: transform 1s ease;
+  
+  &:hover {
+    background-color: $background-color;
+    border-radius: 12px;
+    transform: scale(1.2);
+    z-index: 2;
+    
+    .person__photo-content {
+      
+      border-radius: 60px;
+    }
+    
+    .details {
+      background-color: $background-color;
+      border-radius: 12px;
+      width: 100%;
+      &__name {
+        line-height: 27px;
+      }
+    }
+    
+    .details__extra {
+      &-sport {
+        display: flex;
+        
+      }
+  
+      &-pay {
+        display: flex;
+      }
+      
+    }
+  }
+
+  &__photo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    
+    &-content {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 200px;
+      transition: 1s;
+    }
+
+    &-rank {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 80;
+      right: 10;
+
+      width: 32px;
+      height: 32px;
+
+      font-family: Arial, Helvetica;
+      background-color: #fff;
+      color: $red;
+      font-weight: 700;
+      border-radius: 50%;
+    }
+  }
+
+  .details {
+    
+
+    &__name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica;
+      font-size: 20px;
+      color: $green;
+      line-height: 23px;
+      font-weight: 700;
+      
+      transition: all 1s;
+    }
+    
+    &__extra {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 11px;
+      padding-bottom: 19px;
+      z-index: 2;
+      
+      &-sport {
+        display: none;
+  
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+      }
+  
+      &-pay {
+        display: none;
+  
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+}
